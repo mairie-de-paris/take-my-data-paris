@@ -1,0 +1,49 @@
+<resources>
+
+    <string name="app_name">TakeMyData</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_luncher">Luncher</string>
+    <string name="description_splash">Splash Screen</string>
+    <string name="splash">Bienvenue sur l\'application TakeMyData !</string>
+    <string name="description_marker_map">Map marker</string>
+    <string name="validate">Valider</string>
+    <string name="check_position">Vérifier la position</string>
+    <string name="thanks_contrib">Merci pour votre contribution !</string>
+    <string name="description_icon">icone de l\'objet</string>
+    <string name="authent">Veuillez vous authentifier</string>
+    <string name="back">Annuler</string>
+    <string name="password">Mot de passe</string>
+    <string name="email">Email</string>
+    <string name="name">Pseudo</string>
+    <string name="no_connection">Il vous faut une connexion internet pour accéder à cette page !</string>
+    <string name="map_add">Rajouter</string>
+    <string name="map_recenter">Me recentrer</string>
+    <string name="home_thematic_maps">Cartes thématiques</string>
+    <string name="map_name">Carte globale</string>
+    <string name="decorations_name">Mes décorations</string>
+    <string name="grade_name">Classement</string>
+    <string name="challenges_name">Challenges</string>
+    <string name="about_name">A propos</string>
+    <string name="help_name">Explications</string>
+    <string name="top_3">Top 3</string>
+    <string name="your_position">Votre position</string>
+    <string name="take_picture">Prendre une photo</string>
+    <string name="error_picture">Abandon.</string>
+    <string name="change_position">Modification de la position effectuée</string>
+    <string name="change_position_back">Modification de la position annulée</string>
+    <string name="reporting_name">Signalement</string>
+    <string name="change">Modification d\'un(e)</string>
+    <string name="found">Vous avez trouvé un(e)</string>
+    <string name="help_titre">Objectifs de cette application</string>
+    <string name="help_possibilities">Cette application est une expérimentation permettant :</string>
+    <string name="help_possibility_1">- d\'afficher des points d’intérêt issus de jeux de données Open Data enrichis par ses utilisateurs</string>
+    <string name="help_possibility_2">- de tester la création d\'un mouvement de participation collective (Crowdsourcing) autour de ces données</string>
+    <string name="help_possibility_3">- de créer de nouveaux jeux de données partagés sur le territoire</string>
+    <string name="help_opendata">Qu’est-ce que l\'OpenData :</string>
+    <string name="help_opendata_1">   Le mouvement « Open Data » (données ouvertes) vise à obtenir de tout type de structure, et notamment des collectivités publiques du monde entier, la mise à disposition de tous, de façon libre et gratuite, des données électroniques.</string>
+    <string name="help_opendata_2">   Cette démarche d\'ouverture des données publiques s\'intègre dans une politique globale d\'innovation ouverte menée par la Ville de Paris depuis 2008, dans laquelle la Ville toute entière devient un terrain d\'expérimentation, et où les habitants deviennent co-concepteurs des évolutions de leur Ville.</string>
+    <string name="about_principal">   Application développée initialement par Morgan Lefebvre et Samuels Rats dans le cadre d’un concours (DevCamp) organisé par le « Paris Android User Group » et publiée prochainement sous la licence OpenSource sur</string>
+    <string name="about_url_opendata">http://opendata.paris.fr</string>
+    <string name="about_secondaire">Jeux de données disponibles en libre téléchargement sur</string>
+
+</resources>
