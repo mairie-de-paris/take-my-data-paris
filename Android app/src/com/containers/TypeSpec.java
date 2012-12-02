@@ -51,12 +51,9 @@ public class TypeSpec {
 	public TypeSpec(Cursor c) {
 		mName = c.getString(c.getColumnIndex(DataBase.TABLE_SPEC_TYPE_NAME));
 		mId = c.getInt(c.getColumnIndex(DataBase.TABLE_SPEC_TYPE_ID));
-		mDescription = c.getString(c
-				.getColumnIndex(DataBase.TABLE_SPEC_TYPE_DESCRIPTION));
-		mFormat = c
-				.getString(c.getColumnIndex(DataBase.TABLE_SPEC_TYPE_FORMAT));
-		mUserDefined = c.getInt(c
-				.getColumnIndex(DataBase.TABLE_SPEC_TYPE_USER_DEFINED)) == 1;
+		mDescription = c.getString(c.getColumnIndex(DataBase.TABLE_SPEC_TYPE_DESCRIPTION));
+		mFormat = c.getString(c.getColumnIndex(DataBase.TABLE_SPEC_TYPE_FORMAT));
+		mUserDefined = c.getInt(c.getColumnIndex(DataBase.TABLE_SPEC_TYPE_USER_DEFINED)) == 1;
 		mMeta = c.getString(c.getColumnIndex(DataBase.TABLE_SPEC_TYPE_META));
 	}
 

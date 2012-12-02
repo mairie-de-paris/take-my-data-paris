@@ -15,13 +15,12 @@
 
 package com.utils;
 
-import android.util.Log;
 
 /**
- * Send an object to the server Params : obj -> JSONObject serialiazed
- * containing the object : id -> id of the user
+ * Send an object to the server
  * 
- * @author Morgan
+ * @params obj : JSONObject serialiazed containing the object
+ * @param id : id of the user
  * 
  */
 public class AsyncSendObject extends MyAsyncTask {
@@ -32,6 +31,5 @@ public class AsyncSendObject extends MyAsyncTask {
 
 	@Override
 	public void onPostExecute(String s) {
-		Log.i("Sending object Done", "rtr = " + s);
 	}
 }

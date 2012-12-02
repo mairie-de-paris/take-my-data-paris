@@ -15,13 +15,12 @@
 
 package com.utils;
 
-import android.util.Log;
 
 /**
- * Delete an object from the server Params : obj_id -> id of the object : name
- * -> username of the user
+ * Delete an object from the server Params
  * 
- * @author Morgan
+ * @params obj_id id of the object
+ * @params name username of the user
  * 
  */
 public class AsyncDeleteObject extends MyAsyncTask {
@@ -32,6 +31,5 @@ public class AsyncDeleteObject extends MyAsyncTask {
 
 	@Override
 	public void onPostExecute(String s) {
-		Log.i("Deleting object Done", "rtr = " + s);
 	}
 }

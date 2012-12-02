@@ -33,7 +33,8 @@ import com.utils.Pair;
 
 public class Luncher extends Activity {
 
-	public static final String IMG_URL = "http://pichon.emmanuel.perso.neuf.fr/revues/OI/grand/2002/oi_2002_12.jpg";
+    // Url of the background image
+	public static final String IMG_URL = "url";
 	public static final String IMG_NAME = "launcher_screen_background";
 
 	@Override
@@ -62,8 +63,9 @@ public class Luncher extends Activity {
 			((TextView) findViewById(R.id.description)).setText(info);
 		}
 
-		Bitmap b = DownloadImage.checkExistance(Luncher.IMG_NAME, this);
 		/*
+		 * uncomment to enable the background image of the luncher
+		 * Bitmap b = DownloadImage.checkExistance(Luncher.IMG_NAME, this);
 		 * ImageView background = (ImageView)findViewById(R.id.background); if
 		 * (b != null) { background.setImageBitmap(b); }
 		 */

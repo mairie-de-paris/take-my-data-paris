@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 package com.utils;
 
@@ -74,9 +74,8 @@ public class DownloadImage {
 		bitmap = downloadBitmap(url, true, scale);
 		if (bitmap != null) {
 			DownloadImage.stockBitmap(name, bitmap);
-			Log.i("BITMAP", "OK");
 		} else {
-			Log.i("BITMAP", "!OK " + name);
+			Log.e("download faillure", name);
 		}
 		return (bitmap);
 	}
@@ -100,15 +99,12 @@ public class DownloadImage {
 	 * Generate the bitmap name for storing it from its url or his facultative
 	 * name if not null
 	 * 
-	 * @param url
-	 *            : bitmap's url
-	 * @param facultative_name
-	 *            : faculative name, null if not wanted
+	 * @param url : bitmap's url
+	 * @param facultative_name : faculative name, null if not wanted
 	 * @return the bitmap name or "" if an error occured
 	 */
 	private static String getName(String url, String facultative_name) {
 		String name = "";
-		Log.i("url = ", "oo" + url);
 		if (facultative_name != null && !facultative_name.equals("")) {
 			name = facultative_name;
 		} else {
@@ -142,17 +138,14 @@ public class DownloadImage {
 	/**
 	 * Download the picture
 	 * 
-	 * @param url
-	 *            : picture's url
-	 * @param first
-	 *            : used for double trying download
+	 * @param url : picture's url
+	 * @param first : used for double trying download
 	 * @return the bitmap downloaded
 	 */
 	private static Bitmap downloadBitmap(String url, boolean first,
 			boolean scale) {
 		try {
 			URL urlImage = new URL(url);
-			Log.i("url = ", url);
 
 			HttpURLConnection connection = (HttpURLConnection) urlImage
 					.openConnection();
@@ -173,10 +166,8 @@ public class DownloadImage {
 	/**
 	 * Store a bitmap on the sd
 	 * 
-	 * @param name
-	 *            : bitmap's name
-	 * @param bitmap
-	 *            : bitmap to store
+	 * @param name : bitmap's name
+	 * @param bitmap : bitmap to store
 	 */
 	private static void stockBitmap(String name, Bitmap bitmap) {
 		try {
@@ -188,24 +179,10 @@ public class DownloadImage {
 			os.flush();
 			os.close();
 		} catch (Exception e) {
-			Log.i("DownloadImage error", "Sd card not available for storing : "
+			Log.e("DownloadImage error", "Sd card not available for storing : "
 					+ name);
 			e.printStackTrace();
 		}
 	}
 
-	/**
-	 * delete the repository containing the whole pictures
-	 */
-	public static void deleteDirectory() {
-		DownloadImage.PATH = Environment.getExternalStorageDirectory()
-				.toString() + INTERNAL_PATH;
-		File f = new File(DownloadImage.PATH);
-		if ((f.exists() && f.isDirectory())) {
-			DownloadImage.PATH = null;
-			for (File child : f.listFiles())
-				child.delete();
-			f.delete();
-		}
-	}
 }

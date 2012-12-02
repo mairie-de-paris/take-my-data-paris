@@ -29,6 +29,7 @@ import com.utils.DataBase;
 import com.utils.SqliteRequestPoints;
 
 public class Point {
+	
 	private ArrayList<Spec> mList;
 	private String mStringList;
 	private int mTimestamp;
@@ -57,14 +58,10 @@ public class Point {
 	/**
 	 * Used to create a new point to send to the server
 	 * 
-	 * @param spec
-	 *            : list of the specs
-	 * @param id_type
-	 *            : his type
-	 * @param lat
-	 *            his : lattitude
-	 * @param lon
-	 *            his : longitude
+	 * @param spec list of the specs
+	 * @param id_type type
+	 * @param lat lattitude
+	 * @param lon longitude
 	 * @return the points in a JSON format
 	 */
 	public static String getJsonPoint(JSONArray spec, int id_type, double lat,
@@ -107,8 +104,7 @@ public class Point {
 
 	public Point(Cursor c, Context context) throws JSONException {
 
-		String specs = c
-				.getString(c.getColumnIndex(DataBase.TABLE_POINT_SPECS));
+		String specs = c.getString(c.getColumnIndex(DataBase.TABLE_POINT_SPECS));
 		JSONArray JSONSpecList = new JSONArray(specs);
 		int size = JSONSpecList.length();
 		mList = new ArrayList<Spec>();

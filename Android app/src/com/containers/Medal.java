@@ -20,7 +20,6 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import com.utils.DataBase;
 
@@ -48,8 +47,7 @@ public class Medal {
 	public Medal(Cursor c) {
 		mUrlImg = c.getString(c.getColumnIndex(DataBase.TABLE_MEDALS_IMG_URL));
 		mId = c.getInt(c.getColumnIndex(DataBase.TABLE_MEDALS_ID));
-		mDescription = c.getString(c
-				.getColumnIndex(DataBase.TABLE_MEDALS_DESCRIPTION));
+		mDescription = c.getString(c.getColumnIndex(DataBase.TABLE_MEDALS_DESCRIPTION));
 		mIdObj = c.getInt(c.getColumnIndex(DataBase.TABLE_MEDALS_ID_OBJ));
 		mNbObj = c.getInt(c.getColumnIndex(DataBase.TABLE_MEDALS_NB_OBJ));
 		mPoints = c.getInt(c.getColumnIndex(DataBase.TABLE_MEDALS_POINTS));
@@ -78,7 +76,6 @@ public class Medal {
 	}
 
 	public int getIdObj() {
-		Log.i("id objet", String.valueOf(mIdObj));
 		return mIdObj;
 	}
 

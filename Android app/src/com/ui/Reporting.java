@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 package com.ui;
 
@@ -28,7 +28,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -149,7 +148,6 @@ public class Reporting extends SherlockActivity {
 				String pt = Point.getJsonPoint(mForm.generateSpecs(),
 						mType.getId(), (double) mLattitude / 1000000,
 						(double) mLongitude / 1000000);
-				Log.i("point to JSON", pt);
 				new AsyncSendObject().execute(
 						new Pair("img_64", mImg64Encoded), new Pair("obj", pt),
 						new Pair("id", User.getId(Reporting.this)));
@@ -163,7 +161,7 @@ public class Reporting extends SherlockActivity {
 
 	public static Uri getOutputMediaFile() {
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
-				.format(new Date());
+		.format(new Date());
 		File mediaFile = new File(Environment.getExternalStorageDirectory()
 				.getPath() + File.separator + "IMG_" + timeStamp + ".jpg");
 		return (Uri.fromFile(mediaFile));
@@ -179,11 +177,6 @@ public class Reporting extends SherlockActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Log.i("req", String.valueOf(requestCode));
-		Log.i("res", String.valueOf(resultCode));
-		if(resultCode == RESULT_CANCELED){
-			Log.i("error", "ici");
-		}
 
 		if (requestCode == PICTURE) {
 			if (resultCode == RESULT_OK) {

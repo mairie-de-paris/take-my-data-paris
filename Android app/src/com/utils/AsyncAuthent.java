@@ -26,13 +26,13 @@ import android.widget.Toast;
 
 import com.containers.User;
 import com.ui.AuthentInterface;
+import com.ui.takemydata.R;
 
 /**
  * Authenticate the user
  * 
- * @params email
- * @params pwd
- * @author Morgan
+ * @params email the email of the user
+ * @params pwd the password of the user
  * 
  */
 public class AsyncAuthent extends MyAsyncTask {
@@ -72,25 +72,23 @@ public class AsyncAuthent extends MyAsyncTask {
 							+ mPseudo + ";" + String.valueOf(user.getInt("id"))
 							+ ";", (Context) mAct, FileAccess.AUTHENT);
 				} catch (JSONException e) {
-					Log.i("JSON ERROR", s);
-					Toast.makeText(
-							(Context) mAct,
-							"Une erreur est survenue, veuillez reessayer plus tard.",
+					Log.e("authentication json error", s);
+					e.printStackTrace();
+					Toast.makeText(mContext,
+							mContext.getText(R.string.authent_error),
 							Toast.LENGTH_SHORT).show();
 				}
 				mAct.authentAction(true, mKeyCode);
 				mAlert.cancel();
 			} else if (s.contains("bad email")) {
-				Toast.makeText((Context) mAct, "Cet email est deja utilise",
+				Toast.makeText(mContext, mContext.getText(R.string.authent_used_email),
 						Toast.LENGTH_SHORT).show();
 			} else {
-				Log.i("ERROR", s);
-				Toast.makeText(
-						(Context) mAct,
-						"Une erreur est survenue, veuillez reessayer plus tard.",
+				Log.e("authentication unknown tag", s);
+				Toast.makeText(mContext,
+						mContext.getText(R.string.authent_error),
 						Toast.LENGTH_SHORT).show();
 			}
-			Log.i("dialog", "cancel");
 			mProgress.dismiss();
 		}
 	}

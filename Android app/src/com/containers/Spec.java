@@ -27,44 +27,14 @@ import android.content.Context;
  * Defines one specificity of an object. For instance, the size of a bench or
  * the accessibility of a toilet
  * 
- * @author Morgan
  * 
  */
 public class Spec {
 
 	public static final String TYPE_NOTE = "note";
-	/*
-	 * permet de donner une note : metadata (SpecType) : [valeur min, valeur
-	 * max]
-	 * 
-	 * metadata (Spec) : val : valeur moyenne
-	 */
-
 	public static final String TYPE_RADIO = "radio";
-	/*
-	 * permet de choisir une possibilite parmis d'autre metadata (SpecType) :
-	 * ["proposition 1", "proposition 2", "proposition n"]
-	 * 
-	 * metadata (Spec) : val : proposition qui revient le plus souvent
-	 */
-
 	public static final String TYPE_CHECK = "checkbox";
-	/*
-	 * permet de choisir entre metadata (SpecType) : values["proposition 1",
-	 * "proposition 2", "proposition n"]
-	 * 
-	 * metadata (Spec) : ok : tableau coutenant les propositions validee en
-	 * regle generale ko : tableau coutenant les propositions invalidee en regle
-	 * generale
-	 */
-
 	public static final String TYPE_FREE = "free";
-	/*
-	 * permet de definir une entree de text metadata (SpecType) : val : la
-	 * description de l'information
-	 * 
-	 * metadata (Spec) : val : le contenu de l'information
-	 */
 
 	private TypeSpec mType;
 	private JSONObject mMetadata;

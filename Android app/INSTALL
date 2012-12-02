@@ -1,0 +1,21 @@
+This guide will explain how to install and configure the TMD application
+
+1) Define the google map api-key
+   edit the file res/layout/map.xml and replace "xxx" with your api-key in the line :
+   	android:apiKey="xxx"
+ 
+2) Set the server requests
+   edit the file src/com/utils/MyAsyncTask and replace "xxx" with your own server url in the line :
+   private static final String SERVER_URL = "xxx";
+
+3) The application needs the SherlockActionBar project to compile.
+   Download it here http://actionbarsherlock.com and include it as a library in the TMD project
+
+4) Define the original luncher background
+   edit the file src/com/ui/Luncher.java and replace "xxx" with your own image url in the line :
+   public static final String IMG_URL = "url";
+   
+5) Using Bugsense for tracking errors (http://www.bugsense.com)
+   edit the file src/com/ui/Home.java and replace "xxx" with your own BugSense id in the line :
+   BugSenseHandler.initAndStartSession(this, "xxx");
+
