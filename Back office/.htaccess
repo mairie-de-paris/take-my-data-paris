@@ -1,0 +1,61 @@
+#
+# Copyright 1999-2004 The Apache Software Foundation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+Options +FollowSymlinks
+RewriteEngine On
+
+<IfModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+    Header append Vary: Accept-Encoding
+</IfModule>
+
+<IfModule mod_headers.c>
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+        Header set Cache-Control "max-age=31622400, public"
+    </filesMatch>
+</IfModule>
+
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    ExpiresDefault "access plus 5184000 seconds"
+    ExpiresByType image/jpg "access plus 31622400 seconds"
+    ExpiresByType image/jpeg "access plus 31622400 seconds"
+    ExpiresByType image/png "access plus 31622400 seconds"
+    ExpiresByType image/gif "access plus 31622400 seconds"
+
+    ExpiresByType image/ico "access plus 31622400 seconds"
+    ExpiresByType image/icon "access plus 31622400 seconds"
+    ExpiresByType image/x-icon "access plus 31622400 seconds"
+    ExpiresByType text/css "access plus 31622400 seconds"
+    ExpiresByType text/javascript "access plus 31622400 seconds"
+    ExpiresByType text/html "access plus 7200 seconds"
+    ExpiresByType application/xhtml+xml "access plus 7200 seconds"
+    ExpiresByType application/javascript "access plus 31622400 seconds"
+    ExpiresByType application/x-javascript "access plus 31622400 seconds"
+    ExpiresByType application/x-shockwave-flash "access plus 31622400 seconds"
+</IfModule>
+
+RewriteBase /[SITE_ROOT/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]
