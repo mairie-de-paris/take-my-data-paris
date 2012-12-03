@@ -20,9 +20,7 @@ import com.ui.Luncher;
 import android.content.Context;
 
 /**
- * Get the informations to display on the splash screen
- * 
- * @author Morgan
+ * Get the information to display on the splash screen
  * 
  */
 public class AsyncGetLuncherInformation extends MyAsyncTask {

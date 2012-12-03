@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 package com.ui;
 
@@ -121,8 +121,7 @@ public class Challenges extends TmdUi {
 				holder.name = (TextView) convertView.findViewById(R.id.name);
 				holder.pts = (TextView) convertView.findViewById(R.id.pts);
 				holder.tps = (TextView) convertView.findViewById(R.id.tps);
-				holder.completion = (TextView) convertView
-						.findViewById(R.id.completion);
+				holder.completion = (TextView) convertView.findViewById(R.id.completion);
 				holder.icon = (ImageView) convertView.findViewById(R.id.icon);
 
 				convertView.setTag(holder);
@@ -154,9 +153,9 @@ public class Challenges extends TmdUi {
 				tps.append(m).append("m");
 			} else {
 				if (c.getCompletion() >= c.getNbObj()) {
-					tps.append("Reussit");
+					tps.append(getText(R.string.success));
 				} else {
-					tps.append("Echoue");
+					tps.append(getText(R.string.faillure));
 				}
 			}
 			holder.tps.setText(tps.toString());

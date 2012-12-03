@@ -26,8 +26,6 @@ import android.util.Log;
 /**
  * Store and retrive any kind of data from a file
  * 
- * @author Morgan
- * 
  */
 public class FileAccess {
 
@@ -42,7 +40,6 @@ public class FileAccess {
 		try {
 			fOut = context.openFileOutput(name, Context.MODE_WORLD_WRITEABLE);
 			osw = new OutputStreamWriter(fOut);
-			Log.i("to write int " + name + "= ", "data = " + data.trim());
 			osw.write(data.trim());
 			osw.flush();
 			osw.close();

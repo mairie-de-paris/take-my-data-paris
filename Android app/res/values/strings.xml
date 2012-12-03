@@ -11,6 +11,15 @@
     <string name="thanks_contrib">Merci pour votre contribution !</string>
     <string name="description_icon">icone de l\'objet</string>
     <string name="authent">Veuillez vous authentifier</string>
+    <string name="authent_title">Authentification</string>
+    <string name="authent_bad_email">Email invalide</string>
+    <string name="authent_short_mdp">Mot de passe trop court</string>
+    <string name="authent_short_pseudo">Pseudo trop court</string>
+    <string name="authent_error">Une erreur est survenue, veuillez reessayer plus tard.</string>
+    <string name="authent_used_email">Cet email est déja utilisé</string>
+    <string name="bad_internet_connexion">Veuillez vérifier votre connexion internet</string>
+    <string name="connexion">Connexion</string>
+    <string name="connexion_check">Verification en cours</string>
     <string name="back">Annuler</string>
     <string name="password">Mot de passe</string>
     <string name="email">Email</string>
@@ -45,5 +54,11 @@
     <string name="about_principal">   Application développée initialement par Morgan Lefebvre et Samuels Rats dans le cadre d’un concours (DevCamp) organisé par le « Paris Android User Group » et publiée prochainement sous la licence OpenSource sur</string>
     <string name="about_url_opendata">http://opendata.paris.fr</string>
     <string name="about_secondaire">Jeux de données disponibles en libre téléchargement sur</string>
-
+    <string name="success">Réussit</string>
+    <string name="faillure">Echoué</string>
+    <string name="no_gps">Connection GPS indisponible</string>
+    <string name="new_object_sent">Signalement envoyé ! Merci !</string>
+    <string name="object_removed">Cet objet n\'existe plus</string>
+    <string name="change_characteristics">Modifier les caracteristiques</string>
+    
 </resources>

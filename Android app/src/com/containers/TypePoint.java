@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 package com.containers;
 
@@ -83,11 +83,9 @@ public class TypePoint {
 	public TypePoint(Cursor c) {
 		mName = c.getString(c.getColumnIndex(DataBase.TABLE_POINT_TYPE_NAME));
 		mId = c.getInt(c.getColumnIndex(DataBase.TABLE_POINT_TYPE_ID));
-		mDescription = c.getString(c
-				.getColumnIndex(DataBase.TABLE_POINT_TYPE_DESCRIPTION));
+		mDescription = c.getString(c.getColumnIndex(DataBase.TABLE_POINT_TYPE_DESCRIPTION));
 		mUrlImg = c.getString(c.getColumnIndex(DataBase.TABLE_POINT_TYPE_IMG));
-		mUrlPicto = c.getString(c
-				.getColumnIndex(DataBase.TABLE_POINT_TYPE_IMG_PICTO));
+		mUrlPicto = c.getString(c.getColumnIndex(DataBase.TABLE_POINT_TYPE_IMG_PICTO));
 	}
 
 	public TypePoint(int id) {
@@ -109,7 +107,7 @@ public class TypePoint {
 	public static ArrayList<TypePoint> getAllPointTypes(Context context) {
 		SqliteRequestPointTypes bdd = new SqliteRequestPointTypes(context);
 		ArrayList<TypePoint> types = bdd.getAllTypes();
-		
+
 		// deleting the empty types
 		for (int i = 0 ; i < types.size() ; i++) {
 			TypePoint type = types.get(i);

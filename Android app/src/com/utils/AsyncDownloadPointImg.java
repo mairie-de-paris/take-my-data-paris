@@ -21,6 +21,10 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 
+/**
+ * Download the image of a point from its url
+ *
+ */
 public class AsyncDownloadPointImg extends AsyncTask<Void, Integer, Boolean> {
 
 	private String mUrl;
@@ -37,8 +41,7 @@ public class AsyncDownloadPointImg extends AsyncTask<Void, Integer, Boolean> {
 
 	@Override
 	protected Boolean doInBackground(Void... params) {
-		mImage = DownloadImage
-				.getBitmap(mUrl, "", false, mContext, false, true);
+		mImage = DownloadImage.getBitmap(mUrl, "", false, mContext, false, true);
 		return (mImage != null);
 	}
 
@@ -46,8 +49,6 @@ public class AsyncDownloadPointImg extends AsyncTask<Void, Integer, Boolean> {
 	protected void onPostExecute(Boolean result) {
 		if (result) {
 			mDialog.setIcon(new BitmapDrawable(mContext.getResources(), mImage));
-		} else {
-
 		}
 	}
 

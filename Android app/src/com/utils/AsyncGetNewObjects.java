@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 package com.utils;
 
@@ -34,12 +34,13 @@ import com.containers.TypePoint;
 import com.containers.TypeSpec;
 import com.containers.User;
 import com.ui.Luncher;
+import com.ui.takemydata.R;
 
 /**
  * Retrieve every points created after the timestamp sent
  * 
- * @params : id -> the id of the user timestamp -> date of the last update
- * @author Morgan
+ * @params id : the id of the user
+ * @params timestamp : date of the last update
  * 
  */
 public class AsyncGetNewObjects extends MyAsyncTask {
@@ -55,7 +56,7 @@ public class AsyncGetNewObjects extends MyAsyncTask {
 		@Override
 		protected Integer doInBackground(String... params) {
 			String flx = params[0];
-			
+
 			SqliteRequestPoints bdd_p = new SqliteRequestPoints(mActivity);
 			SqliteRequestPointTypes bdd_t = new SqliteRequestPointTypes(mActivity);
 			SqliteRequestSpecTypes bdd_s = new SqliteRequestSpecTypes(mActivity);
@@ -120,7 +121,7 @@ public class AsyncGetNewObjects extends MyAsyncTask {
 			}
 
 			// Check the data content and parsing
-			checkDb();
+			// checkDb();
 			if (data != null) {
 				return CONNECTION_OK;
 			} else {
@@ -187,6 +188,7 @@ public class AsyncGetNewObjects extends MyAsyncTask {
 			}
 		}
 
+		@SuppressWarnings("unused")
 		private void checkDb() {
 			Log.i("Getting points", "checking db");
 			SqliteRequestPoints bdd_p = new SqliteRequestPoints(mActivity);
@@ -219,8 +221,7 @@ public class AsyncGetNewObjects extends MyAsyncTask {
 			}
 			if (User.getMedals() != null) {
 				for (Medal m : User.getMedals()) {
-					check.append("Medal user (").append(m.toString())
-					.append(")");
+					check.append(m.toString());
 				}
 			}
 			Log.i("check ", check.toString());
@@ -235,7 +236,7 @@ public class AsyncGetNewObjects extends MyAsyncTask {
 				mActivity.lunch();
 			} else if (result == NO_DATA) {
 				Toast.makeText(mActivity,
-						"Veuillez verifier votre connexion internet",
+						mActivity.getText(R.string.bad_internet_connexion),
 						Toast.LENGTH_LONG).show();
 				mActivity.finish();
 			}
@@ -244,7 +245,6 @@ public class AsyncGetNewObjects extends MyAsyncTask {
 	}
 
 	private Luncher mActivity;
-	// private static final String URL = "source";
 	private static final String URL = "ws/global.php";
 
 	public AsyncGetNewObjects(Luncher ac) {
@@ -254,8 +254,7 @@ public class AsyncGetNewObjects extends MyAsyncTask {
 
 	@Override
 	public void onPostExecute(String s) {
-		Log.i("contenu retour serveur", s);
-		BugSenseHandler.addCrashExtraData("contenu retour serveur", s);
+		BugSenseHandler.addCrashExtraData("server data received", s);
 		new AsyncStoreData().execute(s);
 	}
 

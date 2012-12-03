@@ -25,9 +25,9 @@ import android.content.Context;
 
 public class Grade {
 
-	String mName;
-	int mPoints;
-	int mPosition;
+	private String mName;
+	private int mPoints;
+	private int mPosition;
 
 	private static ArrayList<Grade> list = null;
 	private static ArrayList<Grade> listBest = null;

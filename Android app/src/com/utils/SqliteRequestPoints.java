@@ -99,7 +99,6 @@ public class SqliteRequestPoints extends SqliteRequest {
 
 	public Point getStandardPointFromType(int type, Context context) {
 		
-		Log.i("getStandardPointFromType", "id = "+String.valueOf(type));
 		Point point = null;
 		String[] cols = new String[] { DataBase.TABLE_POINT_ID,
 				DataBase.TABLE_POINT_TIMESTAMP, DataBase.TABLE_POINT_LATTITUDE,

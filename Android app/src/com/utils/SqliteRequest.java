@@ -34,7 +34,7 @@ public class SqliteRequest {
 		this.mContext = context;
 		this.mSQLiteBase = new DataBase(this.mContext, BDD_NAME, null, 1);
 		if (this.mSQLiteBase == null) {
-			Log.i("error init sqlite request", "mabase is null");
+			Log.e("error init sqlite request", table_name+" is null");
 		}
 		this.mTableName = table_name;
 		this.open();
@@ -46,7 +46,7 @@ public class SqliteRequest {
 
 	public void open() {
 		if (this.mSQLiteBase == null) {
-			Log.i("error init sqlite request", "base is null");
+			Log.e("error init sqlite request", "base is null");
 		} else {
 			this.mBdd = this.mSQLiteBase.getWritableDatabase();
 		}

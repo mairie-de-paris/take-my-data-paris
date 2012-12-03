@@ -23,8 +23,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Definition of the database
  * 
- * @author Morgan
- * 
  */
 public class DataBase extends SQLiteOpenHelper {
 

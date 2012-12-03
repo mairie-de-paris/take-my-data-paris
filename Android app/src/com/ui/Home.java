@@ -22,7 +22,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,8 +53,8 @@ public class Home extends TmdUi {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		BugSenseHandler.initAndStartSession(this, "de24e98f");
-		Log.i("oncreate", "pouet");
+		// BugSense initialization
+		BugSenseHandler.initAndStartSession(this, "xxx");
 		setContentView(R.layout.home);
 
 		this.initViews();

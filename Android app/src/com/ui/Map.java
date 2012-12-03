@@ -214,14 +214,10 @@ public class Map extends SherlockMapActivity implements AuthentInterface {
 
 	void displayOneType(TypePoint t) {
 		ArrayList<Point> points = Point.getPointsFromType(t.getId(), this);
-		Log.i("display type", "here");
 		List<Overlay> mapOverlays = mMapView.getOverlays();
 		Drawable drawable = new BitmapDrawable(getResources(),
 				t.getPictoBitmap());
 		for (Point p : points) {
-			Log.i("adding point", "(" + String.valueOf(p.getLattitude()) + ";"
-					+ String.valueOf(p.getLongitude()) + ")");
-			Log.i("adding point id ", "(" + String.valueOf(p.getId()) + ")");
 			GPSOverlay overlay = new GPSOverlay(drawable, this);
 			GeoPoint point = new GeoPoint(p.getLattitude(), p.getLongitude());
 			OverlayItem overlayitem = new OverlayItem(point, String.valueOf(p
@@ -264,11 +260,9 @@ public class Map extends SherlockMapActivity implements AuthentInterface {
 
 		if (mStopLocationListener == false) {
 			if (location != null) {
-				Log.i("location is ", " not null");
 				LATTITUDE = (int) (location.getLatitude() * 1000000);
 				LONGITUDE = (int) (location.getLongitude() * 1000000);
 			} else {
-				Log.i("location is ", "null");
 				String data = FileAccess.ReadSettings(this, FileAccess.LATLONG);
 				if (data.contains(";")) {
 					String[] list = data.split(";");
@@ -401,7 +395,7 @@ public class Map extends SherlockMapActivity implements AuthentInterface {
 		Location location = locManager
 				.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		if (location == null) {
-			Toast.makeText(this, "Connection GPS indisponible",
+			Toast.makeText(this, getText(R.string.no_gps),
 					Toast.LENGTH_SHORT).show();
 			return;
 		}
@@ -429,7 +423,7 @@ public class Map extends SherlockMapActivity implements AuthentInterface {
 		} else if (keyCode == DELETE) {
 			new AsyncDeleteObject().execute(new Pair("id", User.getId(this)),
 					new Pair("id_obj", mPointToChange.getId()));
-			Toast.makeText(this, "Signalement envoye ! Merci !",
+			Toast.makeText(this, getText(R.string.new_object_sent),
 					Toast.LENGTH_SHORT).show();
 		} else {
 			Intent i = null;

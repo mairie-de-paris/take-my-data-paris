@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 package com.utils;
 
@@ -39,6 +39,10 @@ import android.widget.TextView;
 import com.containers.Spec;
 import com.containers.TypeSpec;
 
+/**
+ * Create a dynamic form, used for retrieving data information from the users
+ *
+ */
 public class DynamicForm {
 
 	private Context mContext;
@@ -52,10 +56,8 @@ public class DynamicForm {
 	/**
 	 * Create a custom form from the spec list
 	 * 
-	 * @param specs
-	 *            : the list of specifications
-	 * @param isModifiable
-	 *            : true if the form must be modifiable (for editing).
+	 * @param specs : the list of specifications
+	 * @param isModifiable : true if the form must be modifiable (for editing).
 	 * @return
 	 */
 	public LinearLayout generateForm(boolean isModifiable) {
@@ -210,7 +212,6 @@ public class DynamicForm {
 				e.printStackTrace();
 			}
 		}
-		Log.i("generate Specs : ", list.toString());
 		return list;
 	}
 

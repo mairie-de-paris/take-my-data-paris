@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 package com.containers;
 
@@ -69,7 +69,6 @@ public class User {
 		try {
 			id = user.getInt("id");
 		} catch (JSONException e) {
-			Log.e("init user", "pas d'id");
 			id = 1;
 		}
 		SqliteRequestChallenges bdd_c = new SqliteRequestChallenges(context);
@@ -127,8 +126,7 @@ public class User {
 		}
 		final AlertDialog alertDialog = new AlertDialog.Builder(context)
 		.create();
-		alertDialog.setTitle("Authentification");
-
+		alertDialog.setTitle(context.getText(R.string.authent_title));
 		LayoutInflater li = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View form = li.inflate(R.layout.authent, null);
@@ -146,17 +144,17 @@ public class User {
 				String email = eEmail.getText().toString();
 				String pseudo = ePseudo.getText().toString();
 				if (!checkEmail(email)) {
-					Toast.makeText(context, "Email invalide",
+					Toast.makeText(context, context.getText(R.string.authent_bad_email),
 							Toast.LENGTH_SHORT).show();
 				} else if (password.length() < 3) {
-					Toast.makeText(context, "Mot de passe trop court",
+					Toast.makeText(context, context.getText(R.string.authent_short_mdp),
 							Toast.LENGTH_SHORT).show();
 				} else if (pseudo.length() < 3) {
-					Toast.makeText(context, "Mot de passe trop court",
+					Toast.makeText(context, context.getText(R.string.authent_short_pseudo),
 							Toast.LENGTH_SHORT).show();
 				} else {
 					ProgressDialog progress = ProgressDialog.show(context,
-							"Connexion", "Verification en cours ...");
+							context.getText(R.string.connexion), context.getText(R.string.connexion_check));
 					new AsyncAuthent(keyCode, progress, alertDialog, email,
 							md5(password), pseudo, act, context).execute(
 									new Pair("mail", email), new Pair("name", pseudo),
@@ -235,7 +233,6 @@ public class User {
 	private static void initDataUser(Context context) {
 		String info = FileAccess.ReadSettings(context, FileAccess.AUTHENT);
 		if (!info.contains(";")) {
-			Log.e("USER GET NAME", "No name available");
 			email = "";
 			pwd = "";
 			name = "";

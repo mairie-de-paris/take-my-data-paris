@@ -31,6 +31,7 @@ import com.containers.User;
 import com.google.android.maps.ItemizedOverlay;
 import com.google.android.maps.OverlayItem;
 import com.ui.Map;
+import com.ui.takemydata.R;
 
 public class GPSOverlay extends ItemizedOverlay {
 
@@ -68,8 +69,8 @@ public class GPSOverlay extends ItemizedOverlay {
 		Button remove = new Button(mMap);
 		Button change = new Button(mMap);
 
-		remove.setText("Cet objet n'existe plus");
-		change.setText("Modifier les caracteristiques");
+		remove.setText(mMap.getText(R.string.object_removed));
+		change.setText(mMap.getText(R.string.change_characteristics));
 
 		remove.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

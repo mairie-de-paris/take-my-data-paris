@@ -20,7 +20,6 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import com.utils.DataBase;
 
@@ -46,11 +45,9 @@ public class Challenge {
 	}
 
 	public Challenge(Cursor c) {
-		mTimeEnd = c.getInt(c
-				.getColumnIndex(DataBase.TABLE_CHALLENGES_TIME_END));
+		mTimeEnd = c.getInt(c.getColumnIndex(DataBase.TABLE_CHALLENGES_TIME_END));
 		mId = c.getInt(c.getColumnIndex(DataBase.TABLE_CHALLENGES_ID));
-		mDescription = c.getString(c
-				.getColumnIndex(DataBase.TABLE_CHALLENGES_DESCRIPTION));
+		mDescription = c.getString(c.getColumnIndex(DataBase.TABLE_CHALLENGES_DESCRIPTION));
 		mIdObj = c.getInt(c.getColumnIndex(DataBase.TABLE_CHALLENGES_ID_OBJ));
 		mNbObj = c.getInt(c.getColumnIndex(DataBase.TABLE_CHALLENGES_NB_OBJ));
 		mPoints = c.getInt(c.getColumnIndex(DataBase.TABLE_CHALLENGES_POINTS));
@@ -79,7 +76,6 @@ public class Challenge {
 	}
 
 	public int getIdObj() {
-		Log.i("id objet", String.valueOf(mIdObj));
 		return mIdObj;
 	}
 

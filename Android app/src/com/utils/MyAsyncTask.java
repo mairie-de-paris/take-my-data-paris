@@ -31,19 +31,16 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 /**
- * Private class to handle the sending and receiving of datas from the web
- * 
- * @author Morgan
+ * Private class to handle sending and receiving of datas from the web
  * 
  */
 public class MyAsyncTask extends AsyncTask<Pair, Integer, String> {
 
-	public static final String SERVER_URL = "http://88.191.143.205";
+	public static final String SERVER_URL = "xxx";
 	private String mUrl;
 
 	public MyAsyncTask(String url) {
-		this.mUrl = SERVER_URL + "/~tmd/" + url;
-		Log.i("url = ", this.mUrl);
+		this.mUrl = SERVER_URL + url;
 	}
 
 	@Override
