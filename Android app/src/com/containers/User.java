@@ -37,7 +37,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.actionbarsherlock.R;
+import com.ui.takemydata.R;
 import com.ui.AuthentInterface;
 import com.utils.AsyncAuthent;
 import com.utils.FileAccess;
