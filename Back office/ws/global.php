@@ -16,7 +16,7 @@
 **/
 
 define('EXEC', 0xA51D1E);
-
+require_once('../upgrade.php');
 require_once('../config.php');
 
 $datasets = Dataset::getAll();
